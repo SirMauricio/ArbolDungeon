@@ -1,38 +1,50 @@
 from arbol import Arbol
 
-arbol = Arbol("Ricardo") #Nodo raiz
-arbol.agregar("Jack") #Agregar datos
-arbol.agregar("Lion")
-arbol.agregar("Adia")
-arbol.agregar("JassR")
-arbol.agregar("Ero")
-nombre = input("Ingresa un nombre: ") #Para agregar
-arbol.agregar(nombre)
-arbol.preorden()
-arbol.inorden()
-arbol.postorden()
+def mostrar_menu():
+    print("Opciones:")
+    print("1. Agregar personaje")
+    print("2. Buscar personaje")
+    print("3. Eliminar personaje")
+    print("4. Mostrar recorridos")
+    print("5. Salir")
 
-#Busqueda
-busqueda = input("Buscar en el arbol: ")
-nodo = arbol.buscar(busqueda)
-if nodo is None:
-    print(f"{busqueda} no existe")
-else: 
-    print(f"{busqueda} si existe")
+# Crear el árbol con algunos personajes
+arbol = Arbol("Dungeon")
+arbol.agregar("Guerrero")
+arbol.agregar("Cazadora")
+arbol.agregar("Ladrón")
+arbol.agregar("Mago")
 
-    # Eliminar
-nodo_eliminar = "Ricardo"
-arbol.eliminar(nodo_eliminar)
+opcion = 0
 
-# Muestra los recorridos después de la eliminación
-print("<-------------------------->")
-print("  Preorden después de eliminar:")
-arbol.preorden()
-
-print("Inorden después de eliminar:")
-arbol.inorden()
-
-
-print("Postorden después de eliminar:")
-arbol.postorden()
+while opcion != 5:
+    mostrar_menu()
+    try:
+        opcion = int(input("Ingrese una opción: "))
+        if opcion == 1:
+            personaje = input("Ingrese el nombre del personaje a agregar: ")
+            arbol.agregar(personaje)
+            print(f"Personaje '{personaje}' agregado al árbol.")
+        elif opcion == 2:
+            personaje_buscar = input("Ingrese el nombre del personaje a buscar: ")
+            nodo_encontrado = arbol.buscar(personaje_buscar)
+            if nodo_encontrado:
+                print(f"El personaje '{personaje_buscar}' está en el árbol.")
+            else:
+                print(f"El personaje '{personaje_buscar}' no está en el árbol.")
+        elif opcion == 3:
+            personaje_eliminar = input("Ingrese el nombre del personaje a eliminar: ")
+            arbol.eliminar(personaje_eliminar)
+            print(f"Personaje '{personaje_eliminar}' eliminado del árbol.")
+        elif opcion == 4:
+            print("Recorridos:")
+            arbol.preorden()
+            arbol.inorden()
+            arbol.postorden()
+        elif opcion == 5:
+            print("Saliendo del programa...")
+        else:
+            print("Opción inválida. Ingrese un número del 1 al 5.")
+    except ValueError:
+        print("Por favor, ingrese un número.")
 

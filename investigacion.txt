@@ -1,51 +1,68 @@
-Que es un arbol binario?
+Arboles binarios.
 
-Se trata de una estructura de datos donde hay nodos, cada nodo
-se denomia "hijo izquierdo" y "hijo derecha". La estructura se 
-organiza de que cada nodo puede tener subarboles binarios como 
-hijos
+Se podría definiar como una estructura de datos que es usada en la 
+ciencia de computación, sus principales características son que siempre
+inicia con una raíz que desencadena en dos ramificaciones las cuales 
+acaban en una hoja, estas estructuras se conocen como nodos.
+Las ramificaciones siempre son una a la derecha y otro a la izquierda.
 
-Las caracteristicas claves de estas son: 
+Los conceptos importantes sobre el arbopl binario son:
 
--Nodo Raiz: Es el nodo superior del arbol y no tiene ningun nodo
-padre
+    -Nodo Raiz: Es el nodo superior del arbol y no tiene ningun nodo
+    padre.
 
--Nodo Hijos: Cada nodo puede tener como maximo dos nodos hijos,
-uno a la izquierda y uno a la derecha
+    -Nodo Hijo: Puede tener como maximo dos nodos hijos,
+    uno a la izquierda y uno a la derecha
 
--Nodo hoja: Son los que no tienen hijos, Estos niveles estan mas 
-arbol y no tienen nodos hijos
+    -Nodo hoja: Son los que no tienen hijos, Estos niveles estan mas 
+    arbol y no tienen nodos hijos
 
--Subarbol: Un subarbol es un conjunto de nodos y aristas que se pueden 
-considerar como un arbol por si mismo. Cada nodo en un arbol binario puede 
-ser la raiz de su propio subarbol
+    -Subarbol: Es un conjunto de nodos y aristas que se pueden 
+    considerar como un arbol por si mismo. Cada nodo en un arbol binario 
+    puede ser la raiz de su propio subarbol
 
--Altura del Arbol: Es la longitud del camino mas largo desde la raiz
-hasta una hoja. Cada nivel del arbol contribuye a su altura
+    -Altura del Arbol: Es la longitud del camino mas largo desde la raiz
+    hasta una hoja. Cada nivel del arbol contribuye a su altura
 
--Profundidad de un Nodo: Es la longitud del camino desde la raiz hasta
-el nodo en cuestion
-
-Los arboles binarios son utilizado mucho en las ciencias de la
-computacion y estructuras de datos. Pueden ser utilizados para implementar
-estructuras como arboles de una busqueda binaria, expresiones aritmeticas,
-arboles de Huffman y mas cosas. Ademas de la busqueda tambien operaciones
-como la insercion y la eliminacion.
+Pueden ser utilizados para implementar estructuras como arboles de 
+una busqueda binaria, expresiones aritmeticas, arboles de Huffman 
+y mas cosas. Ademas de la busqueda tambien operacionescomo la 
+insercion y la eliminacion.
 
 Tipos de arboles binarios: 
 Existen 3 tipos de arboles binarios los cuales estos son Binario,
 Balanceado y R
 
-Binario: estructura de datos con nodos que tiene un hijo izquierdo y
-un hijo derecho y estos no pueden tener mas de 2 hijos, Si un nodo e
-Null entonces lo que hara es llamar a un nodo externo
+Binario: Estructura de datos con nodos que tiene un hijo izquierdo y
+un hijo derecho y estos no pueden tener mas de 2 hijos.
 
 Balanceado: Tambien conocidos como AVL, Se considera cuando todos sus niveles, 
 execpto el ultimo estan integrados a la maxima capacidad de los nodos. 
-Existen diferentes propuestas para poder balancear los arboles y cada una de ellas 
-repercute en la eficiencia de las operaciones de insercion y eliminacion de nodos
 
 R: Se tratan de estrucutas de datos similares a los arboles-B, con la diferencia
 de que se utiliza para metodos de acceso espacial, es decir paa indexar la 
-informacion multidimensional
+informacion multidimensional.
 
+
+La forma de recorrer un arbol puede variar, estos son los tipos de recorridos:
+
+1.- Recorrido en amplitud:
+El recorrido en amplitud se realiza cuando el recorrido en el árbol se realiza 
+empezando en el nivel superior. Para posteriormente ir bajando hacia los niveles 
+inferiores.
+
+2.- Recorrido en profundidad:
+El recorrido en profundidad se efectúa cuando el recorrido se hace a lo largo de los 
+subárboles. Para ello se puede seguir una secuencia distinta. Se puede seguir un 
+proceso de preorden, orden central o postorden:
+
+    -Preorden: En este caso el recorrido inicia con la raíz, luego se recorre el subárbol 
+    izquierdo y el recorrido finaliza con el subárbol derecho. Cada subconjunto se analiza 
+    en preorden.
+
+    -Orden central: Por su parte, el recorrido en orden central empieza recorriendo el 
+    subárbol izquierdo, luego se pasa a la raíz y el recorrido termina con el subárbol derecho.
+
+    -Postorden: En cuanto al recorrido en postorden, se debe iniciar el recorrido en el 
+    subárbol izquierdo, se traslada luego al subárbol derecho y el recorrido finaliza en 
+    la raíz. Cada recorrido se hace en postorden.
