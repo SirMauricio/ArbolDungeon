@@ -1,1 +1,1 @@
-ejecutar con python main.py en la terminal
+ejecutar con python main.py en la terminal. El programa ofrece un menu para seleccionar la opción que contiene el sistema.

@@ -1,4 +1,4 @@
-from arbol import Arbol
+from arbol import ArbolDungeon
 
 def mostrar_menu():
     print("Opciones:")
@@ -8,8 +8,7 @@ def mostrar_menu():
     print("4. Mostrar recorridos")
     print("5. Salir")
 
-# Crear el árbol con algunos personajes
-arbol = Arbol("Dungeon")
+arbol = ArbolDungeon("Dungeon")
 arbol.agregar("Guerrero")
 arbol.agregar("Cazadora")
 arbol.agregar("Ladrón")

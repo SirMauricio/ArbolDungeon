@@ -1,11 +1,9 @@
 from nodo import Nodo
 
-class Arbol: 
-    #Funciones privadas
+class ArbolDungeon: 
     def __init__(self, dato):
         self.raiz = Nodo(dato)
         
-    #Metodo de insercion
     def __recursive_insert(self, nodo, dato):
         if dato < nodo.dato:
             if nodo.izquierda is None:
@@ -18,7 +16,6 @@ class Arbol:
             else:
                 self.__recursive_insert(nodo.derecha, dato)
                 
-    #Recorrido inorden, preorden y postorden
     def __inorden(self, nodo):
         if nodo is not None:
             self.__inorden(nodo.izquierda)
@@ -47,8 +44,6 @@ class Arbol:
             return self.__busqueda(nodo.izquierda, busqueda)
         else:
             return self.__busqueda(nodo.derecha, busqueda)
-
-    #Metodo de eliminar
     def eliminar(self, dato):
         self.raiz = self.__recursive_delete(self.raiz, dato)
 
@@ -56,19 +51,17 @@ class Arbol:
         if nodo is None:
             return nodo
 
-        # Buscar el nodo a eliminar
         if dato < nodo.dato:
             nodo.izquierda = self.__recursive_delete(nodo.izquierda, dato)
         elif dato > nodo.dato:
             nodo.derecha = self.__recursive_delete(nodo.derecha, dato)
         else:
-            # Caso 1: Nodo con un hijo o sin hijos
+            
             if nodo.izquierda is None:
                 return nodo.derecha
             elif nodo.derecha is None:
                 return nodo.izquierda
 
-            # Caso 3: Nodo con dos hijos
             nodo.dato = self.__get_min_value(nodo.derecha)
             nodo.derecha = self.__recursive_delete(nodo.derecha, nodo.dato)
 
@@ -80,7 +73,6 @@ class Arbol:
             current = current.izquierda
         return current.dato
         
-    #Funciones publicas
     def agregar(self, dato):
         self.__recursive_insert(self.raiz, dato)
         
